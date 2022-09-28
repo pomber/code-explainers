@@ -1,17 +1,169 @@
-<form
-  style="border: 1px solid #ccc; padding: 3px; text-align: center"
-  action="https://tinyletter.com/CodeExplainers"
-  method="post"
-  target="popupwindow"
-  onsubmit="window.open('https://tinyletter.com/CodeExplainers', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true"
->
-  <p><label for="tlemail">Enter your email address</label></p>
-  <p><input type="text" style="width: 140px" name="email" id="tlemail" /></p>
-  <input type="hidden" value="1" name="embed" /><input
-    type="submit"
-    value="Subscribe"
-  />
-  <p>
-    <a href="https://tinyletter.com" target="_blank">powered by TinyLetter</a>
-  </p>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Code Explainers</title>
+    <style>
+      body {
+        background-color: #fafafa;
+        font-family: sans-serif;
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 10vh 2rem;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      h1 {
+        text-align: center;
+        font-size: clamp(1.5rem, -0.875rem + 12vw, 3rem);
+      }
+      svg {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 34rem;
+      }
+      circle {
+        stroke: #000;
+        stroke-width: 1;
+      }
+      text {
+        text-anchor: middle;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 2rem auto;
+        background-color: #e3ece6;
+        border-radius: 4px;
+        padding: 2rem;
+        gap: 1rem;
+        width: 100%;
+        max-width: 34rem;
+      }
+
+      .inputs {
+        display: flex;
+        width: 100%;
+        max-width: 20rem;
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+
+      input {
+        font-size: 1rem;
+        padding: 4px;
+      }
+
+      input[type="text"] {
+        flex: 1;
+        min-width: 140px;
+      }
+
+      footer {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        font-size: 1.2rem;
+        flex-wrap: wrap;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Code Explainers</h1>
+    <svg viewBox="23 -2 154 104" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="75" cy="50" r="50" fill="#ddb4" stroke="none" />
+      <circle cx="125" cy="50" r="50" fill="#bdd4" stroke="none" />
+      <circle cx="75" cy="50" r="50" fill="none" />
+      <circle cx="125" cy="50" r="50" fill="none" />
+
+      <text
+        x="50"
+        y="48"
+        dominant-baseline="baseline"
+        style="font-size: 0.45rem"
+      >
+        Programming
+      </text>
+      <text
+        x="50"
+        y="50"
+        dominant-baseline="hanging"
+        style="font-size: 0.45rem"
+      >
+        Content
+      </text>
+
+      <text
+        x="100"
+        y="48"
+        dominant-baseline="baseline"
+        style="font-size: 0.45rem"
+      >
+        YOU ARE
+      </text>
+      <text
+        x="100"
+        y="50"
+        dominant-baseline="hanging"
+        style="font-size: 0.7rem"
+      >
+        HERE
+      </text>
+
+      <text
+        x="150"
+        y="48"
+        dominant-baseline="baseline"
+        style="font-size: 0.45rem"
+      >
+        Explorable
+      </text>
+      <text
+        x="150"
+        y="50"
+        dominant-baseline="hanging"
+        style="font-size: 0.45rem"
+      >
+        Explanations
+      </text>
+    </svg>
+
+    <form
+      action="https://tinyletter.com/CodeExplainers"
+      method="post"
+      target="popupwindow"
+      onsubmit="window.open('https://tinyletter.com/CodeExplainers', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true"
+    >
+      <label for="tlemail"
+        >There will be a newsletter! Leave your email here:
+      </label>
+      <div class="inputs">
+        <input
+          type="text"
+          name="email"
+          id="tlemail"
+          placeholder="email address"
+          autocomplete="email"
+        />
+        <input type="hidden" value="1" name="embed" /><input
+          type="submit"
+          value="Subscribe"
+        />
+      </div>
+    </form>
+
+    <footer>
+      <a href="https://discord.gg/DnpTjcRTgG">Discord</a>
+      <a href="https://github.com/pomber/code-explainers">GitHub</a>
+      <a href="https://twitter.com/pomber">Twitter</a>
+    </footer>
+  </body>
+</html>
