@@ -11,7 +11,7 @@ body {
   font-family: "Inter", sans-serif;
   max-width: 52rem;
   margin: 0 auto;
-  padding: 2rem 2rem;
+  padding: 0;
 }
 
 * {

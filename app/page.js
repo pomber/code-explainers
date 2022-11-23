@@ -1,13 +1,18 @@
 import Image from "next/image";
-import { getDiscordMembers } from "./stats";
+import { getDiscordMembers, getNewsletterSubscribers } from "./stats";
 
 export default function Page() {
   return (
     <div>
+      <div style={{ height: "4rem" }} />
       <Title />
+      <div style={{ height: "8rem" }} />
       <Description />
+      <div style={{ height: "8rem" }} />
       <Boxes />
+      <div style={{ height: "4rem" }} />
       <Footer />
+      <div style={{ height: "1rem" }} />
     </div>
   );
 }
@@ -16,7 +21,7 @@ const discordColor = "#7392ff";
 
 function Title() {
   return (
-    <WithBackground style={{ textAlign: "center", margin: "3rem 0 8rem" }}>
+    <WithBackground style={{ textAlign: "center", margin: 0 }}>
       <h1 style={{ margin: 0 }}>
         <div
           style={{
@@ -109,7 +114,7 @@ function WithBackground({ children, bg, fg, style, blur = 50 }) {
 
 function Footer() {
   return (
-    <footer style={{ textAlign: "center", marginTop: "4rem", color: "#9999" }}>
+    <footer style={{ textAlign: "center", color: "#9999" }}>
       Started by{" "}
       <a href="https://twitter.com/pomber">
         <Image
@@ -122,16 +127,17 @@ function Footer() {
         pomber
       </a>
       . Watch this{" "}
-      <a href="https://www.youtube.com/watch?v=9BU1fLCumR8">lightning talk</a>{" "}
-      for more context.
+      <a href="https://youtu.be/9BU1fLCumR8?t=18">lightning talk</a> for more
+      context.
     </footer>
   );
 }
 
 async function Boxes() {
   const discordMembers = await getDiscordMembers();
+  const subscribers = await getNewsletterSubscribers();
   return (
-    <div style={{ display: "flex", marginTop: "6rem" }}>
+    <div style={{ display: "flex" }}>
       <Box
         backgroundColor={discordColor + "05"}
         style={{ "--hover-color": "#b1c2fd" }}
@@ -196,7 +202,7 @@ async function Boxes() {
               background: "#e75156",
             }}
           />
-          95 subscribers
+          {subscribers} subscribers
         </div>
         <a
           href="https://tinyletter.com/CodeExplainers"
@@ -225,7 +231,7 @@ function Box({ children, backgroundColor, style }) {
       style={{
         flex: 1,
         minWidth: "300px",
-        margin: "1rem",
+        margin: "0 1rem",
         ...style,
       }}
       fg={{ backdropFilter: "blur(20px)" }}

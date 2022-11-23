@@ -11,3 +11,7 @@ export async function getDiscordMembers() {
   const { approximate_member_count } = await res.json();
   return approximate_member_count;
 }
+
+export async function getNewsletterSubscribers() {
+  return 95;
+}
