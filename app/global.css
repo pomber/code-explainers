@@ -21,11 +21,10 @@ body {
 a {
   color: #aaa;
   text-decoration: none;
-  --hover-color: #eaeaea;
 }
 
 a:hover {
-  color: var(--hover-color) !important;
+  color: var(--hover-color, #eaeaea) !important;
 }
 
 /* if mobile */
