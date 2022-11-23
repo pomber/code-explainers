@@ -9,9 +9,9 @@ body {
   background-color: #010410;
   color: #eaeaea;
   font-family: "Inter", sans-serif;
-  max-width: 52rem;
+  max-width: 48rem;
   margin: 0 auto;
-  padding: 0;
+  padding: 0 2rem;
 }
 
 * {
@@ -26,4 +26,11 @@ a {
 
 a:hover {
   color: var(--hover-color) !important;
+}
+
+/* if mobile */
+@media (max-width: 600px) {
+  body {
+    --description-font-size: 2.6rem;
+  }
 }

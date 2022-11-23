@@ -6,13 +6,13 @@ export default function Page() {
     <div>
       <div style={{ height: "4rem" }} />
       <Title />
-      <div style={{ height: "8rem" }} />
+      <div style={{ height: "6rem" }} />
       <Description />
-      <div style={{ height: "8rem" }} />
+      <div style={{ height: "6rem" }} />
       <Boxes />
       <div style={{ height: "4rem" }} />
       <Footer />
-      <div style={{ height: "1rem" }} />
+      <div style={{ height: "2rem" }} />
     </div>
   );
 }
@@ -74,7 +74,7 @@ function Description() {
     <WithBackground bg={{ color: "#9996" }} fg={{ color: "#999" }}>
       <h2
         style={{
-          fontSize: "3.8em",
+          fontSize: "var(--description-font-size, 3.8em)",
           textAlign: "center",
           margin: 0,
         }}
@@ -114,7 +114,7 @@ function WithBackground({ children, bg, fg, style, blur = 50 }) {
 
 function Footer() {
   return (
-    <footer style={{ textAlign: "center", color: "#9999" }}>
+    <footer style={{ textAlign: "center", color: "#9999", lineHeight: 1.4 }}>
       Started by{" "}
       <a href="https://twitter.com/pomber">
         <Image
@@ -137,7 +137,7 @@ async function Boxes() {
   const discordMembers = await getDiscordMembers();
   const subscribers = await getNewsletterSubscribers();
   return (
-    <div style={{ display: "flex" }}>
+    <div style={{ display: "flex", gap: "2rem", flexWrap: "wrap" }}>
       <Box
         backgroundColor={discordColor + "05"}
         style={{ "--hover-color": "#b1c2fd" }}
@@ -230,8 +230,7 @@ function Box({ children, backgroundColor, style }) {
       blur={28}
       style={{
         flex: 1,
-        minWidth: "300px",
-        margin: "0 1rem",
+        minWidth: "320px",
         ...style,
       }}
       fg={{ backdropFilter: "blur(20px)" }}
