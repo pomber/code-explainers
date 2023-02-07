@@ -13,5 +13,5 @@ export async function getDiscordMembers() {
 }
 
 export async function getNewsletterSubscribers() {
-  return 119;
+  return 124;
 }
